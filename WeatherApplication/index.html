@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApplication</title>
+    <link rel="stylesheet" href="WeatherAplication.css">
+    <script src="WeatherApplication.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <div id="weather_report_ctr">
+        <div id="search_input_ctr">
+            <input type="text" placeholder="Search City" id="search_input_box">
+            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+        </div>
+        <div id="city_info_ctr">
+            <i class="fa-solid fa-location-dot" id="location_icon"></i>
+            <h1 id="city_name"></h1>
+        </div>
+        <div id="weather_details_ctr">
+            <img src="" alt="" id="weather_image">
+            <h1 id="weather_content"> <span></span></h1>
+          <span id="temp_value"><sup></sup></span>
+        </div>
+        <div id="humidity_wind_ctr">
+            <div id="humidity_ctr" class="humidity_wind">
+                <i class="fa-solid fa-droplet humidity_wind_icons" ></i>
+                <h1 id="humidity_heading">Humidity</h1>
+                <span id="humidityValue" class="humid_wind_values"></span>
+            </div>
+            <div id="wind_ctr" class="humidity_wind">
+                <i class="fa-solid fa-wind humidity_wind_icons" ></i>
+                <h1 id="wind_heading">Wind</h1>
+                <span id="wind_value" class="humid_wind_values"></span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
