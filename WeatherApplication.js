@@ -10,7 +10,7 @@ const humidityValue = document.getElementById("humidityValue");
 const windValue = document.getElementById("wind_value");
 const weatherImage = document.getElementById("weather_image");
 
-// ✅ Single async function that handles everything
+// ✅ One function to handle everything
 async function getWeatherData() {
     const city = searchInputBox.value.trim();
     if (city === "") {
@@ -28,27 +28,27 @@ async function getWeatherData() {
 
         const data = await response.json();
 
-        // Update UI directly here
+        // Update UI
         cityName.textContent = data.name;
         tempValue.innerHTML = `${Math.round(data.main.temp)}<sup>°</sup>C`;
         weatherContent.textContent = data.weather[0].description;
         humidityValue.textContent = `${data.main.humidity}%`;
         windValue.textContent = `${data.wind.speed} km/hr`;
 
-        // Set weather image based on condition
+        // ✅ Fix image paths (since images are in /assets)
         const weatherMain = data.weather[0].main.toLowerCase();
-       if (weatherMain.includes("cloud")) {
-    weatherImage.src = "assets/2682832_cloud_day_forecast_sun_weather_icon.png";
-} else if (weatherMain.includes("rain")) {
-    weatherImage.src = "assets/5729387_cloudy_lightning_weather_cloud_forecast_icon.png";
-} else if (weatherMain.includes("clear")) {
-    weatherImage.src = "assets/2682848_day_forecast_sun_sunny_weather_icon.png";
-} else if (weatherMain.includes("haze") || weatherMain.includes("mist")) {
-    weatherImage.src = "assets/5729389_cloud_foggy_weather_cloudy_forecast_icon.png";
-} else {
-    weatherImage.src = "assets/2682832_cloud_day_forecast_sun_weather_icon.png"; // optional fallback
-}
 
+        if (weatherMain.includes("cloud")) {
+            weatherImage.src = "assets/2682832_cloud_day_forecast_sun_weather_icon.png";
+        } else if (weatherMain.includes("rain")) {
+            weatherImage.src = "assets/5729387_cloudy_lightning_weather_cloud_forecast_icon.png";
+        } else if (weatherMain.includes("clear")) {
+            weatherImage.src = "assets/2682848_day_forecast_sun_sunny_weather_icon.png";
+        } else if (weatherMain.includes("haze") || weatherMain.includes("mist")) {
+            weatherImage.src = "assets/2682802_cloudy_day_fog_foggy_mist_icon.png";
+        } else {
+            weatherImage.src = "assets/5729389_cloud_foggy_weather_cloudy_forecast_icon.png";
+        }
 
     } catch (error) {
         alert(error.message);
