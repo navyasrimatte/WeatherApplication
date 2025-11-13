@@ -38,15 +38,15 @@ async function getWeatherData() {
         // Set weather image based on condition
         const weatherMain = data.weather[0].main.toLowerCase();
         if (weatherMain.includes("cloud")) {
-            weatherImage.src = "../../../assets/images/2682832_cloud_day_forecast_sun_weather_icon.png";
+            weatherImage.src = "WeatherApplication/assets/images/2682832_cloud_day_forecast_sun_weather_icon.png";
         } else if (weatherMain.includes("rain")) {
-            weatherImage.src = "../../../assets/images/5729387_cloudy_lightning_weather_cloud_forecast_icon.png";
+            weatherImage.src = "WeatherApplication/assets/images/5729387_cloudy_lightning_weather_cloud_forecast_icon.png";
         } else if (weatherMain.includes("clear")) {
-            weatherImage.src = "../../../assets/images/2682848_day_forecast_sun_sunny_weather_icon.png";
+            weatherImage.src = "WeatherApplication/assets/images/2682848_day_forecast_sun_sunny_weather_icon.png";
         } else if (weatherMain.includes("haze") || weatherMain.includes("mist")) {
-            weatherImage.src = "../../../assets/images/5729389_cloud_foggy_weather_cloudy_forecast_icon.png";
+            weatherImage.src = "WeatherApplication//assets/images/5729389_cloud_foggy_weather_cloudy_forecast_icon.png";
         } else {
-            weatherImage.src = "../../../assets/images/";
+            weatherImage.src = "WeatherApplication/assets/images/2682802_cloudy_day_fog_foggy_mist_icon.png"";
         }
 
     } catch (error) {
@@ -58,3 +58,4 @@ searchIcon.addEventListener("click", getWeatherData);
 searchInputBox.addEventListener("keypress", (e) => {
     if (e.key === "Enter") getWeatherData();
 });
+
