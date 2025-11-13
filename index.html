@@ -1,256 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>WeatherApplication</title>
-
-  <!-- Font Awesome (icons used in your HTML) -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
-
-  <style>
-    /* ----- YOUR STYLES (unchanged layout, only background URL corrected) ----- */
-    *{ padding: 0; margin: 0; box-sizing: border-box; }
-
-    body{
-      <-- CORRECT raw URL for the image on GitHub for user navyasrimatte -->
-      background-image: url("https://raw.githubusercontent.com/navyasrimatte/WeatherApplication/main/assets/Himalayas.jpg");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      padding: 70px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    #weather_report_ctr{
-      width: 50vw;
-      height: 80vh;
-      background-color: rgba(0, 0, 0,0.50);
-      border-radius: 3vw;
-    }
-
-    #search_input_ctr{
-      width: 40vw;
-      height: 10vh;
-      position: relative;
-      left: 10%;
-      top: 7%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    #search_input_box{
-      color: white;
-      width: 40vw;
-      height: 9vh;
-      font-size: 2vw;
-      padding-left: 30%;
-      border-radius: 2vw;
-      outline: none;
-      border: none;
-      background-color: rgba(0, 0, 0,0.50);
-    }
-
-    #search_icon{
-      position: absolute;
-      left: 90%;
-      font-size: 2vw;
-      color: lightgray;
-      cursor: pointer;
-    }
-
-    #search_input_box::placeholder{ color: white; }
-    #search_icon:hover{ color: white; }
-
-    #city_info_ctr{
-      width: 15vw;
-      height: 10vh;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      position: absolute;
-      left: 30%;
-      top: 30%;
-      font-size: 4vw;
-    }
-
-    #location_icon{ font-size: 6vw; color: red; }
-    #city_name{ position: relative; left: 10%; color: white; }
-
-    #weather_details_ctr{
-      width: 40vw;
-      height: 15vh;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: absolute;
-      top: 47%;
-      left: 29%;
-      color: white;
-    }
-
-    #weather_image{ width: 9vw; }
-    #temp_value{ font-size: 5vw; }
-    #weather_content{ position: relative; left: 0%; font-size: 4.5vw; }
-
-    #humidity_wind_ctr{
-      width: 40vw;
-      height: 20vh;
-      position: relative;
-      top: 57%;
-      left: 10%;
-      display: flex;
-      flex-direction: row;
-      column-gap: 4%;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .humidity_wind{
-      width: 25vw;
-      height: 25vh;
-      background-color: rgba(0, 0, 0,0.60);
-      display: flex;
-      flex-direction: column;
-      row-gap: 3%;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      border-radius: 3vw;
-    }
-
-    .humidity_wind_icons{ color: white; font-size: 2vw; }
-    .humid_wind_values{ font-size: 3vw; }
-
-    .humidity_wind:hover{
-      background-color: rgba(0, 0, 0,0.20);
-      cursor: pointer;
-    }
-
-    /* Responsive */
-    @media screen and (max-width: 768px) {
-      body { padding: 20px; background-size: cover; overflow-y: auto; }
-      #weather_report_ctr { width: 90vw; height: auto; padding: 20px; border-radius: 6vw; background-color: rgba(0,0,0,0.5); }
-
-      #search_input_ctr { width: 80vw; height: 8vh; left: 5%; top: 5%; }
-      #search_input_box { width: 80vw; height: 7vh; font-size: 4vw; padding-left: 15%; border-radius: 4vw; }
-      #search_icon { left: 85%; font-size: 4vw; }
-
-      #city_info_ctr { width: 80vw; height: auto; left: 10%; top: 20%; flex-direction: row; font-size: 8vw; }
-      #location_icon { font-size: 10vw; }
-
-      #weather_details_ctr { width: 80vw; height: auto; top: 38%; left: 10%; flex-direction: column; text-align: center; row-gap: 10px; }
-      #weather_image { width: 25vw; }
-      #temp_value { font-size: 10vw; }
-      #weather_content { font-size: 5vw; }
-
-      #humidity_wind_ctr { width: 80vw; height: auto; top: 50%; left: 10%; flex-direction: column; row-gap: 20px; align-items: center; }
-      .humidity_wind { width: 70vw; height: 20vh; border-radius: 5vw; }
-      .humidity_wind_icons { font-size: 5vw; }
-      .humid_wind_values { font-size: 6vw; }
-      #humidity_heading, #wind_heading { font-size: 5vw; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherApplication</title>
+    <link rel="stylesheet" href="WeatherAplication.css">
+    <script src="WeatherApplication.js" defer></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer">
 </head>
 <body>
-  <div id="weather_report_ctr">
-    <div id="search_input_ctr">
-      <input type="text" placeholder="Search City" id="search_input_box">
-      <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+    <div id="weather_report_ctr">
+        <div id="search_input_ctr">
+            <input type="text" placeholder="Search City" id="search_input_box">
+            <i class="fa-solid fa-magnifying-glass" id="search_icon"></i>
+        </div>
+        <div id="city_info_ctr">
+            <i class="fa-solid fa-location-dot" id="location_icon"></i>
+            <h1 id="city_name"></h1>
+        </div>
+        <div id="weather_details_ctr">
+            <img src="" alt="" id="weather_image">
+            <h1 id="weather_content"> <span></span></h1>
+          <span id="temp_value"><sup></sup></span>
+        </div>
+        <div id="humidity_wind_ctr">
+            <div id="humidity_ctr" class="humidity_wind">
+                <i class="fa-solid fa-droplet humidity_wind_icons" ></i>
+                <h1 id="humidity_heading">Humidity</h1>
+                <span id="humidityValue" class="humid_wind_values"></span>
+            </div>
+            <div id="wind_ctr" class="humidity_wind">
+                <i class="fa-solid fa-wind humidity_wind_icons" ></i>
+                <h1 id="wind_heading">Wind</h1>
+                <span id="wind_value" class="humid_wind_values"></span>
+            </div>
+        </div>
     </div>
-
-    <div id="city_info_ctr">
-      <i class="fa-solid fa-location-dot" id="location_icon"></i>
-      <h1 id="city_name"></h1>
-    </div>
-
-    <div id="weather_details_ctr">
-      <img src="" alt="" id="weather_image">
-      <h1 id="weather_content"></h1>
-      <span id="temp_value"></span>
-    </div>
-
-    <div id="humidity_wind_ctr">
-      <div id="humidity_ctr" class="humidity_wind">
-        <i class="fa-solid fa-droplet humidity_wind_icons"></i>
-        <h1 id="humidity_heading">Humidity</h1>
-        <span id="humidityValue" class="humid_wind_values"></span>
-      </div>
-
-      <div id="wind_ctr" class="humidity_wind">
-        <i class="fa-solid fa-wind humidity_wind_icons"></i>
-        <h1 id="wind_heading">Wind</h1>
-        <span id="wind_value" class="humid_wind_values"></span>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // YOUR JS (unchanged)
-    const apiKey = "746c3a6f4db2574e47027215dd408035";
-
-    const searchInputBox = document.getElementById("search_input_box");
-    const searchIcon = document.getElementById("search_icon");
-
-    const cityName = document.getElementById("city_name");
-    const tempValue = document.getElementById("temp_value");
-    const weatherContent = document.getElementById("weather_content");
-    const humidityValue = document.getElementById("humidityValue");
-    const windValue = document.getElementById("wind_value");
-    const weatherImage = document.getElementById("weather_image");
-
-    async function getWeatherData() {
-        const city = searchInputBox.value.trim();
-        if (city === "") {
-            alert("Please enter a city name!");
-            return;
-        }
-
-        try {
-            const apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-            const response = await fetch(apiURL);
-
-            if (!response.ok) {
-                throw new Error("City not found!");
-            }
-
-            const data = await response.json();
-
-            // Update UI:
-            cityName.textContent = data.name;
-            tempValue.innerHTML = `${Math.round(data.main.temp)}<sup>°</sup>C`;
-            weatherContent.textContent = data.weather[0].description;
-            humidityValue.textContent = `${data.main.humidity}%`;
-            windValue.textContent = `${data.wind.speed} km/hr`;
-
-            // Select weather icon (ensure filenames exist in your assets)
-            const weatherMain = data.weather[0].main.toLowerCase();
-
-            if (weatherMain.includes("cloud")) {
-                weatherImage.src = "assets/2682832_cloud_day_fog_foggy_mist_icon.png";
-            } else if (weatherMain.includes("rain")) {
-                weatherImage.src = "assets/5729387_cloudy_lightning_weather_cloud_forecast_icon.png";
-            } else if (weatherMain.includes("clear")) {
-                weatherImage.src = "assets/2682848_day_forecast_sun_sunny_weather_icon.png";
-            } else if (weatherMain.includes("haze") || weatherMain.includes("mist")) {
-                weatherImage.src = "assets/2682802_cloudy_day_fog_foggy_mist_icon.png";
-            } else {
-                weatherImage.src = "assets/5729389_cloud_foggy_weather_cloudy_forecast_icon.png";
-            }
-
-        } catch (error) {
-            alert(error.message);
-        }
-    }
-
-    searchIcon.addEventListener("click", getWeatherData);
-    searchInputBox.addEventListener("keypress", (event) => {
-        if (event.key === "Enter") getWeatherData();
-    });
-  </script>
 </body>
 </html>
