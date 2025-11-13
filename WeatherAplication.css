@@ -5,7 +5,7 @@
 }
 
 body{
-    background-image: url(assets/Himalayas.jpg);
+    background-image: url(WeatherApplication/assets/Himalayas.jpg);
     background-size: 100% ;
     backdrop-filter:blur(0.6);
     padding: 70px;
@@ -234,6 +234,7 @@ body{
         font-size: 5vw;
     }
 }
+
 
 
 
