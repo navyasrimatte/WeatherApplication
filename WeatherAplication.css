@@ -5,15 +5,18 @@
 }
 
 body{
-    background-image: url(WeatherApplication/assets/Himalayas.jpg);
-    background-size: 100% ;
-    backdrop-filter:blur(0.6);
+    background-image: url("assets/Himalayas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(0.6);
     padding: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
 }
+
 
 #weather_report_ctr{
     width: 50vw;
@@ -234,6 +237,7 @@ body{
         font-size: 5vw;
     }
 }
+
 
 
 
