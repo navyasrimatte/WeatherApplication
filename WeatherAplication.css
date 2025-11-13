@@ -5,9 +5,10 @@
 }
 
 body{
-    background-image: url(assets/images/Himalayas.jpg);
-    background-size: 100% ;
-    /* backdrop-filter:blur(0.5); */
+    background-image: url("https://raw.githubusercontent.com/navyasrimattee/WeatherApplication/main/assets/Himalayas.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     padding: 70px;
     display: flex;
     justify-content: center;
@@ -21,6 +22,7 @@ body{
     background-color: rgba(0, 0, 0,0.50);
     border-radius: 3vw;
 }
+
 #search_input_ctr{
     width: 40vw;
     height: 10vh;
@@ -43,6 +45,7 @@ body{
     border: none;
     background-color: rgba(0, 0, 0,0.50);
 }
+
 #search_icon{
     position: absolute;
     left: 90%;
@@ -50,12 +53,15 @@ body{
     color: lightgray;
     cursor: pointer;
 }
+
 #search_input_box::placeholder{
     color: white;
 }
+
 #search_icon:hover{
     color: white;
 }
+
 #city_info_ctr{
     width: 15vw;
     height: 10vh;
@@ -67,15 +73,18 @@ body{
     top: 30%;
     font-size: 4vw;
 }
+
 #location_icon{
     font-size: 6vw;
     color: red;
 }
+
 #city_name{
     position: relative;
     left: 10%;
     color: white;
 }
+
 #weather_details_ctr{
     width: 40vw;
     height: 15vh;
@@ -87,17 +96,21 @@ body{
     left: 29%;
     color: white;
 }
+
 #weather_image{
     width: 9vw;
 }
+
 #temp_value{
     font-size: 5vw;
 }
+
 #weather_content{
     position: relative;
     left: 0%;
     font-size: 4.5vw;
 }
+
 #humidity_wind_ctr{
     width: 40vw;
     height: 20vh;
@@ -110,30 +123,34 @@ body{
     justify-content: space-between;
     align-items: center;
 }
+
 .humidity_wind{
     width: 25vw;
     height: 25vh;
-     background-color: rgba(0, 0, 0,0.60);
-     display: flex;
-     flex-direction: column;
-     row-gap: 3%;
-     align-items: center;
-     justify-content: center;
-     color: white;
-     border-radius: 3vw;
-    }
-    .humidity_wind_icons{
-        color: white;
-        font-size: 2vw;
-    }
-    .humid_wind_values{
-        font-size: 3vw;
-    }
- .humidity_wind:hover{
+    background-color: rgba(0, 0, 0,0.60);
+    display: flex;
+    flex-direction: column;
+    row-gap: 3%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    border-radius: 3vw;
+}
+
+.humidity_wind_icons{
+    color: white;
+    font-size: 2vw;
+}
+
+.humid_wind_values{
+    font-size: 3vw;
+}
+
+.humidity_wind:hover{
     background-color: rgba(0, 0, 0,0.20);
     cursor: pointer;
-
 }
+
 /* ------------------ RESPONSIVE DESIGN ------------------ */
 @media screen and (max-width: 768px) {
 
