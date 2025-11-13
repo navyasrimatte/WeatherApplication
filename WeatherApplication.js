@@ -10,7 +10,7 @@ const humidityValue = document.getElementById("humidityValue");
 const windValue = document.getElementById("wind_value");
 const weatherImage = document.getElementById("weather_image");
 
-// ✅ One function to handle everything
+// MAIN FUNCTION
 async function getWeatherData() {
     const city = searchInputBox.value.trim();
     if (city === "") {
@@ -28,18 +28,18 @@ async function getWeatherData() {
 
         const data = await response.json();
 
-        // Update UI
+        // Update UI:
         cityName.textContent = data.name;
         tempValue.innerHTML = `${Math.round(data.main.temp)}<sup>°</sup>C`;
         weatherContent.textContent = data.weather[0].description;
         humidityValue.textContent = `${data.main.humidity}%`;
         windValue.textContent = `${data.wind.speed} km/hr`;
 
-        // ✅ Fix image paths (since images are in /assets)
+        // Select weather icon:
         const weatherMain = data.weather[0].main.toLowerCase();
 
         if (weatherMain.includes("cloud")) {
-            weatherImage.src = "assets/2682832_cloud_day_forecast_sun_weather_icon.png";
+            weatherImage.src = "assets/2682832_cloud_day_force_sun_weather_icon.png";
         } else if (weatherMain.includes("rain")) {
             weatherImage.src = "assets/5729387_cloudy_lightning_weather_cloud_forecast_icon.png";
         } else if (weatherMain.includes("clear")) {
@@ -56,6 +56,8 @@ async function getWeatherData() {
 }
 
 searchIcon.addEventListener("click", getWeatherData);
-searchInputBox.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") getWeatherData();
+searchInputBox.addEventListener("keypress", (event) => {
+    if (event.key === "Enter") {
+        getWeatherData();
+    }
 });
